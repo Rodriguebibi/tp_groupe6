@@ -25,6 +25,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  http:
 
 dev_dependencies:
   flutter_test:
@@ -34,10 +35,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/ajavonsebas.jpeg
-    - assets/images/lionel.jpeg
-    - assets/images/patrice.jpeg
-    - assets/images/yayi.jpeg
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

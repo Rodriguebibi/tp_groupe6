@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'candidat_list_page.dart';
 
+
 void main() {
   runApp(MyApp());
 }

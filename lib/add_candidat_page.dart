@@ -23,6 +23,7 @@ class _AddCandidatPageState extends State<AddCandidatPage> {
   final _sexController = TextEditingController();
   final _partyController = TextEditingController();
   final _descriptionController = TextEditingController();
+  final _photoController = TextEditingController();
 
   @override
   void dispose() {
@@ -31,6 +32,7 @@ class _AddCandidatPageState extends State<AddCandidatPage> {
     _sexController.dispose();
     _partyController.dispose();
     _descriptionController.dispose();
+    _photoController.dispose(); 
     super.dispose();
   }
 
@@ -39,7 +41,7 @@ class _AddCandidatPageState extends State<AddCandidatPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Ajouter un candidat'),
-        backgroundColor: Colors.indigo[400], // couleur de l'app bar
+        backgroundColor: Colors.blue, // couleur de l'app bar
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -103,6 +105,16 @@ class _AddCandidatPageState extends State<AddCandidatPage> {
                   return null;
                 },
               ),
+              TextFormField(
+                controller: _photoController,
+                decoration: InputDecoration(labelText: 'Veuillez entrer le lien de votre photo'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return '';
+                  }
+                  return null;
+                },
+              ),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -116,7 +128,7 @@ class _AddCandidatPageState extends State<AddCandidatPage> {
                 },
                 child: Text('Ajouter'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.indigo[400], // couleur du bouton
+                  backgroundColor: Colors.blue[400], // couleur du bouton
                 ),
               ),
             ],
